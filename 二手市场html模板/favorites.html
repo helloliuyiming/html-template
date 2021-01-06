@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>我的收藏</title>
+    <!-- 响应式标签 -->
+    <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
+    <link href="link/bootstrap-4.5.0-dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/common.css" rel="stylesheet">
+    <style>
+        html,body{
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+        .favorites-item:hover .favorites-cancel{
+            visibility: visible;
+        }
+        .favorites-cancel{
+            visibility: hidden;
+        }
+
+    </style>
+</head>
+<body class="container">
+
+    <div class="card" style="height: 90%;width: 100%;margin-top: 3%;display: flex;flex-flow: row nowrap;flex-direction: column">
+        <h2 class="card-header" style="text-align: center;">我的收藏</h2>
+        <div class="card-body row justify-content-between" style="flex-grow: 1;height: 100%">
+
+            <div id="favorites-left" class="col-6" style="height: 100%">
+                <div style="height: 88%">
+                    <table class="table" style="height: 100%; overflow-y: scroll;display: block" align="center">
+
+                        <tr class="favorites-item">
+                            <td><input class="align-self-center" type="checkbox"></td>
+                            <td><img src="image/avatar.png" style="width: 80px;height: 80px"/></td>
+                            <td><p class="text-truncate text-wrap goods-outline-title"><a href="#">这是标题这是标题这是标题这是标题这是标题这是标题这是标题这是标题这是标题这是标题这是标题这是标题这是标题这是标题</a></p></td>
+                            <td class="d-flex flex-column align-items-start">
+                                <button type="button" class="close favorites-cancel align-self-end" aria-label="Close" >
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                                <p class="">￥25.6</p>
+                            </td>
+                        </tr>
+
+                        <tr class="favorites-item">
+                            <td><input class="align-self-center" type="checkbox"></td>
+                            <td><img src="image/avatar.png" style="width: 80px;height: 80px"/></td>
+                            <td><p class="text-truncate text-wrap goods-outline-title"><a href="#">这是标题这是标题这是标题这是标题这是标题这是标题这是标题这是标题这是标题这是标题这是标题这是标题这是标题这是标题</a></p></td>
+                            <td class="d-flex flex-column align-items-start">
+                                <button type="button" class="close favorites-cancel align-self-end" aria-label="Close" >
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                                <p class="">￥25.6</p>
+                            </td>
+                        </tr>
+
+                        <tr class="favorites-item">
+                            <td><input class="align-self-center favorites-active-status" type="checkbox" id="使用商品id填充"></td>
+                            <td><img src="image/avatar.png" style="width: 80px;height: 80px"/></td>
+                            <td><p class="text-truncate text-wrap goods-outline-title"><a href="#">这是标题这是标题这是标题这是标题这是标题这是标题这是标题这是标题这是标题这是标题这是标题这是标题这是标题这是标题</a></p></td>
+                            <td class="d-flex flex-column align-items-start">
+                                <button type="button" class="close favorites-cancel align-self-end" aria-label="Close" >
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                                <p class="">￥25.6</p>
+                            </td>
+                        </tr>
+
+                        <tr class="favorites-item">
+                            <td><input class="align-self-center" type="checkbox"></td>
+                            <td><img src="image/avatar.png" style="width: 80px;height: 80px"/></td>
+                            <td><p class="text-truncate text-wrap goods-outline-title"><a href="#">这是标题这是标题这是标题这是标题这是标题这是标题这是标题这是标题这是标题这是标题这是标题这是标题这是标题这是标题</a></p></td>
+                            <td class="d-flex flex-column align-items-start">
+                                <button type="button" class="close favorites-cancel align-self-end" aria-label="Close" >
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                                <p class="">￥25.6</p>
+                            </td>
+                        </tr>
+
+                        <tr class="favorites-item">
+                            <td><input class="align-self-center" type="checkbox"></td>
+                            <td><img src="image/avatar.png" style="width: 80px;height: 80px"/></td>
+                            <td><p class="text-truncate text-wrap goods-outline-title"><a href="#">这是标题这是标题这是标题这是标题这是标题这是标题这是标题这是标题这是标题这是标题这是标题这是标题这是标题这是标题</a></p></td>
+                            <td class="d-flex flex-column align-items-start">
+                                <button type="button" class="close favorites-cancel align-self-end" aria-label="Close" >
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                                <p class="">￥25.6</p>
+                            </td>
+                        </tr>
+
+                        <tr class="favorites-item">
+                            <td><input class="align-self-center" type="checkbox"></td>
+                            <td><img src="image/avatar.png" style="width: 80px;height: 80px"/></td>
+                            <td><p class="text-truncate text-wrap goods-outline-title"><a href="#">这是标题这是标题这是标题这是标题这是标题这是标题这是标题这是标题这是标题这是标题这是标题这是标题这是标题这是标题</a></p></td>
+                            <td class="d-flex flex-column align-items-start">
+                                <button type="button" class="close favorites-cancel align-self-end" aria-label="Close" >
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                                <p class="">￥25.6</p>
+                            </td>
+                        </tr>
+
+                        <tr class="favorites-item">
+                            <td><input class="align-self-center" type="checkbox"></td>
+                            <td><img src="image/avatar.png" style="width: 80px;height: 80px"/></td>
+                            <td><p class="text-truncate text-wrap goods-outline-title"><a href="#">这是标题这是标题这是标题这是标题这是标题这是标题这是标题这是标题这是标题这是标题这是标题这是标题这是标题这是标题</a></p></td>
+                            <td class="d-flex flex-column align-items-start">
+                                <button type="button" class="close favorites-cancel align-self-end" aria-label="Close" >
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                                <p class="">￥25.6</p>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <hr style="height: 2%">
+                <div class="row" style="height: 10%">
+                    <div class="form-check col-3 offset-1">
+                        <input type="checkbox" class="form-check-input">
+                        <label class="form-check-label">全选</label>
+                    </div>
+                    <div class="col-4 offset-3">
+                        <a href="#" style="color: #000000;text-decoration: none;">清除选中的商品</a>
+                    </div>
+                </div>
+            </div>
+
+            <div id="favorites-right" class="col-6" style="height: 100%">
+                <h5 style="height: 8%;margin: 0">选中商品</h5>
+                <div style="width: 100%;height: 80%;overflow-y: scroll;overflow-x: hidden">
+                    <div class="row justify-content-around">
+                        <div class="col-1">
+                            <button type="button" class="close" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <p class="col-8 text-truncate">这是商品标题这是商品标题这是商品标题这是商品标题这是商品标题这是商品标题这是商品标题</p>
+                        <p class="col-2">+ 12.5</p>
+                    </div>
+
+                    <div class="row justify-content-around">
+                        <div class="col-1">
+                            <button type="button" class="close" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <p class="col-8 text-truncate">这是商品标题这是商品标题这是商品标题这是商品标题这是商品标题这是商品标题这是商品标题</p>
+                        <p class="col-2">+ 12.5</p>
+                    </div>
+
+
+                    <div class="row justify-content-around">
+                        <div class="col-1">
+                            <button type="button" class="close" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <p class="col-8 text-truncate">这是商品标题这是商品标题这是商品标题这是商品标题这是商品标题这是商品标题这是商品标题</p>
+                        <p class="col-2">+ 12.5</p>
+                    </div>
+
+
+                    <div class="row justify-content-around">
+                        <div class="col-1">
+                            <button type="button" class="close" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <p class="col-8 text-truncate">这是商品标题这是商品标题这是商品标题这是商品标题这是商品标题这是商品标题这是商品标题</p>
+                        <p class="col-2">+ 12.5</p>
+                    </div>
+                    <div class="row justify-content-around">
+                        <div class="col-1">
+                            <button type="button" class="close" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <p class="col-8 text-truncate">这是商品标题这是商品标题这是商品标题这是商品标题这是商品标题这是商品标题这是商品标题</p>
+                        <p class="col-2">+ 12.5</p>
+                    </div>
+
+
+
+                </div>
+
+                <hr style="height: 2%">
+                <div style="height: 10%;text-align: right">
+                    <button class="btn btn-outline-info rounded-pill" style="padding: 2px 8px">下订单</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="link/jquery-3.5.1.js"></script>
+    <script src="link/bootstrap-4.5.0-dist/js/bootstrap.bundle.js"></script>
+<script>
+
+</script>
+</body>
+</html>

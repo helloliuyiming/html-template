@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>注册</title>
+    <!-- 响应式标签 -->
+    <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
+    <link href="link/bootstrap-4.5.0-dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        #title {
+            text-align: center;
+            margin-top: 100px;
+        }
+
+        .form-group {
+            margin: 15px 0;
+        }
+
+        #verifycode {
+            width: 120px;
+            height: 50px;
+        }
+    </style>
+</head>
+<body>
+<h2 id="title">注册</h2>
+<form action="#" class="form-inline needs-validation">
+    <div class="container form-content justify-content-center">
+        <div class="row form-row form-group">
+            <label class="col-1 form-name offset-3">用户名</label>
+            <input class="col-3 form-item-input form-control" name="name" required type="text">
+            <small class="text-muted mx-sm-3">
+                Must be 8-20 characters long.
+            </small>
+        </div>
+
+        <div class="row form-row form-group">
+            <label class="col-1 form-name offset-3">密码</label>
+            <input class="col-3 form-item-input form-control" name="password" required type="text">
+            <small class="text-muted mx-sm-3">
+                Must be 8-20 characters long.
+            </small>
+        </div>
+
+        <div class="row form-row form-group">
+            <label class="col-1 form-name offset-3">重复密码</label>
+            <input class="col-3 form-item-input form-control" name="re-password" required type="text">
+            <small class="text-muted mx-sm-3">
+                Must be 8-20 characters long.
+            </small>
+        </div>
+
+
+        <div class="row form-row form-group">
+            <label class="col-1 form-name offset-3">性别</label>
+            <fieldset class="form-group">
+                <div class="col-3">
+                    <div class="form-check">
+                        <input checked class="form-check-input" id="gridRadios1" name="sex" type="radio" value="男">
+                        <label class="form-check-label" for="gridRadios1">男</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" id="gridRadios2" name="sex" type="radio" value="女">
+                        <label class="form-check-label" for="gridRadios2">女</label>
+                    </div>
+                </div>
+            </fieldset>
+        </div>
+
+        <div class="row form-row form-group">
+            <label class="col-1 form-name offset-3">邮箱</label>
+            <input class="col-3 form-item-input form-control" name="email" required type="text">
+        </div>
+
+        <div class="row form-row form-group">
+            <label class="col-1 form-name offset-3">手机号</label>
+            <input class="col-3 form-item-input form-control" name="phone" required type="text">
+        </div>
+
+        <div class="row form-row form-group">
+            <label class="col-1 form-name offset-3">选择头像</label>
+            <div class="col-3">
+                <input class="custom-file-input" id="customFile" name="avatar" type="file">
+                <label class="custom-file-label" for="customFile">选择头像</label>
+            </div>
+        </div>
+
+
+        <div class="row form-row form-group">
+            <label class="col-1 form-name offset-3">验证码</label>
+            <input class="col-3 form-item-input form-control" name="veritycode" required type="text">
+            <img class="mx-sm-3" id="verifycode" src="image/logo.jpg">
+        </div>
+
+        <div class="row form-group form-row">
+            <div class="col-7 form-check justify-content-end">
+
+                <input class="form-check-input" name="treatment" type="checkbox">
+                <label class="form-check-label">
+                    我已阅读并同意<a href="#">用户协议</a>
+                </label>
+            </div>
+        </div>
+
+        <div class="row form-group form-row">
+            <div class="col-4 offset-3">
+                <button class="btn btn-primary btn-block" type="submit">注册</button>
+            </div>
+        </div>
+    </div>
+</form>
+
+
+</body>
+</html>

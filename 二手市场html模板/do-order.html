@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>下订单</title>
+    <!-- 响应式标签 -->
+    <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
+    <link href="link/bootstrap-4.5.0-dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/common.css" rel="stylesheet">
+    <style>
+        html,body{
+            width: 100%;
+            height: 100%;
+        }
+
+    </style>
+</head>
+<body class="container">
+    <div class="card" style="margin-top: 2%;margin-bottom: 10%">
+        <h5 class="card-header" style="text-align: center;">结算页</h5>
+
+        <div class="card-body">
+            <div style="overflow-x: hidden;">
+
+                <div class="card" style="padding: 10px 20px;margin-top: 10px">
+                    <p>收货人信息</p>
+<!--                    无地址显示下面一个div-->
+
+<!--                    <div id="no-address">-->
+<!--                        <button class="btn btn-primary" data-target="#add-address" data-toggle="modal" type="button">添加收货地址</button>-->
+<!--                        &lt;!&ndash; 添加收货地址对话框 &ndash;&gt;-->
+<!--                        <div aria-hidden="true" class="modal fade bd-example-modal-lg" id="add-address" role="dialog" tabindex="-1">-->
+<!--                            <div class="modal-dialog modal-lg modal-dialog-centered">-->
+<!--                                <div class="modal-content">-->
+<!--                                    <div class="modal-header">-->
+<!--                                        添加收获地址-->
+<!--                                    </div>-->
+
+<!--                                    <div class="modal-body">-->
+<!--                                        <label>地址</label>-->
+<!--                                        <div class="form-row">-->
+
+<!--                                            <div class="form-check-inline" id="select-address">&lt;!&ndash; container &ndash;&gt;-->
+<!--                                                <select class="form-control"></select>&lt;!&ndash; 省 &ndash;&gt;-->
+<!--                                                <select class="form-control"></select>&lt;!&ndash; 市 &ndash;&gt;-->
+<!--                                                <select class="form-control"></select>&lt;!&ndash; 区 &ndash;&gt;-->
+<!--                                            </div>-->
+<!--                                        </div>-->
+
+<!--                                        <div class="form-group">-->
+<!--                                            <label for="inputAddress">详细地址</label>-->
+<!--                                            <input class="form-control" id="inputAddress" placeholder="xx街道xx小区xx号" type="text">-->
+<!--                                        </div>-->
+
+<!--                                        <div class="form-row">-->
+<!--                                            <div class="form-group col-md-6">-->
+<!--                                                <label for="inputEmail4">收件人</label>-->
+<!--                                                <input class="form-control" id="inputEmail4" type="email">-->
+<!--                                            </div>-->
+<!--                                            <div class="form-group col-md-6">-->
+<!--                                                <label for="inputPassword4">联系电话</label>-->
+<!--                                                <input class="form-control" id="inputPassword4" placeholder="仅支持中国大陆+86手机号"-->
+<!--                                                       type="text">-->
+<!--                                            </div>-->
+<!--                                        </div>-->
+<!--                                        <div class="form-check">-->
+<!--                                            <input class="form-check-input" id="exampleCheck1" type="checkbox">-->
+<!--                                            <label class="form-check-label" for="exampleCheck1">设为默认地址</label>-->
+<!--                                        </div>-->
+
+<!--                                    </div>-->
+
+<!--                                    <div class="modal-footer">-->
+<!--                                        <button class="btn btn-secondary" data-dismiss="modal" type="button">取消</button>-->
+<!--                                        <button class="btn btn-primary" type="button">保存</button>-->
+<!--                                    </div>-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </div>-->
+
+<!--                    有地址显示下面一个div-->
+                    <div id="has-address">
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="address" value="option1" checked>
+                            <label class="form-check-label">
+                                这是地址这是地址这是地址这是地址这是地址
+                            </label>
+                        </div>
+                        <a class="" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">查看更多</a>
+                        <div class="collapse" id="collapseExample">
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="address" value="option1">
+                                <label class="form-check-label">
+                                    这是地址这是地址这是地址这是地址这是地址这是地址这是地址这是地址这是地址
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="address" value="option1">
+                                <label class="form-check-label">
+                                    这是地址这是地址这是地址这是地址这是地址
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+
+                <div class="card" style="padding: 10px 20px;margin-top: 30px">
+                    <p>商品清单</p>
+
+                    <div class="one-home" style="width: 100%">
+                        <table class="table">
+                            <thead>
+                            <tr class="row justify-content-center">
+                                <th class="col-1">图片</th>
+                                <th class="col-5">商品标题</th>
+                                <th class="col-2">商品价格</th>
+                                <th class="col-1">运费</th>
+                                <th class="col-2">操作</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr class="row justify-content-center">
+                                <td class="col-1"><img src="image/avatar.png" style="width: 100%"></td>
+                                <td class="col-5 ">
+                                    <p class="text-truncate"><a href="#">商品标题商品标题商品标题商品标题商品标题商品标题商品标题商品标题商品标题</a></p>
+                                    <p class="text-truncate"></p>
+                                </td>
+                                <td class="col-2">￥12.5</td>
+                                <td class="col-1">￥0.0</td>
+                                <td class="col-2"><button class="btn btn-outline-info" data-toggle="modal" data-target="#add-other-info">添加备注</button> </td>
+                            </tr>
+                            <tr class="row justify-content-center">
+                                <td class="col-1"><img src="image/avatar.png" style="width: 100%"></td>
+                                <td class="col-5 ">
+                                    <p class="text-truncate"><a href="#">商品标题商品标题商品标题商品标题商品标题商品标题商品标题商品标题商品标题</a></p>
+                                    <p class="text-truncate"></p>
+                                </td>
+                                <td class="col-2">￥12.5</td>
+                                <td class="col-1">￥0.0</td>
+                                <td class="col-2"><button class="btn btn-outline-info">添加备注</button> </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="card" style="padding: 10px 20px;margin-top: 30px">
+                    <div class="form-inline">
+                        <label class="my-1 mr-2" for="inlineFormCustomSelectPref">支付方式</label>
+                        <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref">
+                            <option selected disabled>选择支付方式</option>
+                            <option value="1">支付宝</option>
+                            <option value="2">微信</option>
+                            <option value="3">云闪付</option>
+                            <option value="3">货到付款</option>
+                        </select>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <hr>
+            <div>
+                <div class="row" style="padding: 0 20px">
+                    <p class="col-10 text-right"><span style="color: red">1</span> 件商品，总商品金额：</p>
+                    <p class="col-2 text-right">￥89.00</p>
+                </div>
+
+                <div class="row" style="padding: 0 20px">
+                    <p class="col-10 text-right">运费：：</p>
+                    <p class="col-2 text-right">￥89.00</p>
+                </div>
+
+                <div class="row" style="padding: 0 20px">
+                    <p class="col-10 text-right">优惠券：</p>
+                    <p class="col-2 text-right">- <span style="color: red">89.00</span></p>
+                </div>
+            </div>
+            <div style="width: 100%;background: #d3d9df">
+                <div class="row" style="padding: 10px 20px 0 20px">
+                    <p class="col-10 text-right align-self-center">应付总额：</p>
+                    <p class="col-2 text-right">-<span style="color: red;font-size: 28px">89.00</span></p>
+                </div>
+                <p class="text-right " style="color: #6c757d;font-size: 14px;padding: 0 20px 10px 20px">
+                    寄送至：<span style="margin-right: 10px">xxxxxxxxxxxxxxxxxxxxxxxxxxxxx</span>
+                    收货人：<span>姓名</span><span style="margin-left: 10px">138xxxx2569</span>
+                </p>
+            </div>
+            <div style="text-align: right">
+                 <button class="btn btn-primary">提交订单</button>
+            </div>
+
+
+        </div>
+    </div>
+
+
+    <div id="add-other-info" class="modal" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">添加备注信息</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <textarea class="form-control">
+
+                    </textarea>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">取消</button>
+                    <button type="button" class="btn btn-primary">保存</button>
+                </div>
+            </div>
+        </div>
+    </div>
+<script src="link/jquery-3.5.1.js"></script>
+<script src="link/bootstrap-4.5.0-dist/js/bootstrap.bundle.js"></script>
+    <script src="link/distpicker/distpicker.min.js"></script>
+<script>
+    $('#select-address').distpicker({
+        province: '--请选择省份--',
+        city: '--请选择市--',
+        district: '--请选择区/县--'
+    });
+
+</script>
+</body>
+</html>

@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>订单详情</title>
+    <!-- 响应式标签 -->
+    <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
+    <link href="link/bootstrap-4.5.0-dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="link/bootstrap-steps.min.css" rel="stylesheet">
+    <link href="css/common.css" rel="stylesheet">
+    <style>
+        #order-goods-block,#order-info,#order-progress-block{
+            margin-top: 50px;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body class="container">
+
+    <main>
+        <div class="card" id="order-progress-block">
+            <div class="card-body row">
+                <div class="col-3" id="status-and-action">
+                    <p>订单号：133265181333</p>
+                    <h4 class="text-center">完成</h4>
+                    <div style="width: 100%;text-align: center">
+                        <button class="btn btn-outline-danger">action</button>
+                    </div>
+                </div>
+
+                <div class="col-9">
+                    <ul class="steps">
+                        <li class="step step-success">
+                            <div class="step-content">
+                                <span class="step-circle">1</span>
+                                <span class="step-text">生成订单</span>
+                            </div>
+                        </li>
+                        <li class="step step-active">
+                            <div class="step-content">
+                                <span class="step-circle">2</span>
+                                <span class="step-text">已付款/买家已付款</span>
+                            </div>
+                        </li>
+                        <li class="step">
+                            <div class="step-content">
+                                <span class="step-circle">3</span>
+                                <span class="step-text">代发货</span>
+                            </div>
+                        </li>
+                        <li class="step">
+                            <div class="step-content">
+                                <span class="step-circle">4</span>
+                                <span class="step-text">待收货</span>
+                            </div>
+                        </li>
+
+                        <li class="step">
+                            <div class="step-content">
+                                <span class="step-circle">4</span>
+                                <span class="step-text">完成</span>
+                            </div>
+                        </li>
+                    </ul>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="card" id="order-goods-block">
+            <table class="table">
+                <thead>
+                <tr class="row">
+                   <th class="offset-1 col-6">商品</th>
+                   <th class="col-2">价格</th>
+                   <th class="col-2">操作</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr class="row">
+                    <td class="offset-1 col-6">
+                        <div class="row justify-content-center">
+                            <img src="image/avatar.png" class="col-3" style="width: 100%">
+                            <p class="col-7 text-truncate"><a href="#"> 联想（lenovo）魔方插座插排插板一转四插座魔方转换器魔方插座插排插板一转四插座魔方转换器 总控开关LX-M801白色</a> </p>
+                        </div>
+                    </td>
+                    <td class="col-2">
+                        ￥25.6
+                    </td>
+                    <td class="col-2">
+                        <button class="btn">取消订单</button>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+            <div class="row" style="width: 100%">
+                <table class="table table-sm table-borderless offset-8 col-4">
+                    <tr>
+                        <td>商品总额：</td>
+                        <td>¥9.90</td>
+                    </tr>
+                    <tr>
+                        <td>运费：</td>
+                        <td>+ ¥6.00</td>
+                    </tr>
+                    <tr>
+                        <td>支付有礼：</td>
+                        <td>- ¥0.02</td>
+                    </tr>
+                    <tr>
+                        <td><p style="font-size: 22px;color: red">实付款：</p></td>
+                        <td><p style="font-size: 25px;color: red">¥9.90</p></td>
+                    </tr>
+
+                </table>
+            </div>
+        </div>
+
+        <div class="card " id="order-info" style="margin-bottom: 100px">
+            <div class="row row-cols-3">
+                <div class="col">
+                    <h5 class="text-center">收货人信息</h5>
+                    <table class="table table-borderless">
+                        <tr class="row">
+                            <td class="offset-1 col-4">收货人：</td>
+                            <td class="col-6">xxx</td>
+                        </tr>
+                        <tr class="row">
+                            <td class="offset-1 col-4">地址：</td>
+                            <td class="col-6">河南洛阳市洛龙区李村镇吉庆路6号洛阳师范学院伊滨校区枣园3305</td>
+                        </tr>
+                        <tr class="row">
+                            <td class="offset-1 col-4">手机号：</td>
+                            <td class="col-6">175xxxx5645</td>
+                        </tr>
+                    </table>
+
+                </div>
+
+                <div class="col">
+                    <h5 class="text-center">配送信息</h5>
+                    <table class="table table-borderless">
+                        <tr class="row">
+                            <td class="offset-1 col-5">配送方式：</td>
+                            <td class="col-6">xxx</td>
+                        </tr>
+                        <tr class="row">
+                            <td class="offset-1 col-5">期望送货日期：</td>
+                            <td class="col-6">2020-12-05</td>
+                        </tr>
+                        <tr class="row">
+                            <td class="offset-1 col-5">期望配送时间：</td>
+                            <td class="col-6">2020-12-05</td>
+                        </tr>
+                    </table>
+                </div>
+
+                <div class="col">
+                    <h5 class="text-center">付款信息</h5>
+                    <table class="table table-borderless">
+                        <tr class="row">
+                            <td class="offset-1 col-5">付款方式：</td>
+                            <td class="col-6">在线支付</td>
+                        </tr>
+                        <tr class="row">
+                            <td class="offset-1 col-5">付款时间：</td>
+                            <td class="col-6">2020-12-04 10:13:41</td>
+                        </tr>
+                    </table>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+<script src="link/jquery-3.5.1.js"></script>
+<script src="link/bootstrap-4.5.0-dist/js/bootstrap.bundle.js"></script>
+
+
+</body>
+</html>

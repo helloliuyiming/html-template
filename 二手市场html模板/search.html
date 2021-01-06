@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>xxx商品搜索</title>
+    <meta charset="UTF-8">
+    <!-- 响应式标签 -->
+    <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
+    <link href="link/bootstrap-4.5.0-dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/common.css" rel="stylesheet"/>
+</head>
+<body>
+<header class="container-fluid">
+    <div class="row justify-content-center" id="header-title">
+        <a class="col-1" href="index.html">
+            <img alt="logo" class="img-thumbnail" src="image/logo.jpg">
+        </a>
+
+        <div class="input-group offset-1 col-6" id="search-block">
+
+            <div class="row container-lg" id="search-input">
+
+                <div class="col-8">
+                    <input aria-describedby="button-addon2" aria-label="Recipient's username" class="form-control" id="searchByKey"
+                           placeholder="输入关键字搜索"
+                           type="text">
+                </div>
+
+                <div class="input-group-append col-3">
+                    <button class="btn btn-outline-secondary search_btn" onclick="search()" type="submit">搜索</button>
+                </div>
+
+            </div>
+
+            <div class="row container-lg" id="search-history">
+                <ul class="nav">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#">历史1</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">历史2</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">历史3</a>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+
+        <div class="col-3 row justify-content-start align-items-center">
+            <a class="col-4" href="personal.html" style="display: inline-block">
+                <img src="image/avatar.png" style="width: 100%;object-fit: contain;top: 10%;height: 80%"/>
+            </a>
+
+            <div class="6">
+                <a href="personal.html"><span style="font-size: 22px">xxx</span></a><br>
+                <a href="#">我的消息(6)</a><br>
+                <a href="favorites.html">我的收藏(6)</a>
+            </div>
+        </div>
+    </div>
+</header>
+
+<main class="container-fluid">
+
+    <h4 class="offset-2">xxx的搜索结果</h4>
+
+    <div class="row" style="width: 100%;margin-top: 30px">
+        <aside class="col-2" id="search-filter-block">
+			<div>
+				<h5>排序</h5>
+				<select class="custom-select" id="validationDefault04" required>
+					<option selected value="">综合排序</option>
+					<option>信用优先</option>
+					<option>距离优先</option>
+					<option>价格升序</option>
+					<option>价格降序</option>
+				</select>
+			</div>
+			<br>
+			<div>
+				<h5>筛选</h5>
+				<form action="#">
+
+
+					<div class="form-check">
+						<input class="form-check-input" type="checkbox">
+						<label class="form-check-label">
+							只看精品
+						</label>
+					</div>
+
+					<div class="form-check">
+						<input class="form-check-input" type="checkbox">
+						<label class="form-check-label">
+							新品
+						</label>
+					</div>
+
+					<div class="form-check">
+						<input class="form-check-input" type="checkbox">
+						<label class="form-check-label">
+							货到付款
+						</label>
+					</div>
+
+					<div class="form-group">
+						<label>价格区间</label>
+						<div class="row justify-content-around">
+							<input class="form-control form-control-sm col-5" placeholder="起始价格" type="text">
+							<span class="col-1">-</span>
+							<input class="form-control form-control-sm col-5" placeholder="最高价格" type="text">
+						</div>
+					</div>
+
+					<div class="row justify-content-between">
+						<button class="col-5 btn btn-outline-success" type="reset">重置</button>
+						<button class="col-5 btn btn-primary" type="submit">筛选</button>
+					</div>
+
+				</form>
+			</div>
+
+        </aside>
+
+		<div class="col-10" style="padding-left: 20px">
+			<div class="row row-cols-5 justify-content-around home-block goods-block ">
+
+				<div class="goods-outline col">
+					<div class="goods-outline-content">
+						<a href="baidu.com">
+							<div class="goods-outline-info">
+								<img class="figure-img img-fluid rounded mx-auto d-block goods-outline-img"
+									 src="image/logo.jpg">
+								<p class="text-truncate text-wrap goods-outline-title"><span class="tag">精品</span>北欧洽谈接待阳台家用小户型客厅简约休闲休息圆桌奶茶餐桌椅组合
+									60黑单桌</p>
+								<h4 class="goods-outline-price">￥183.00</h4>
+								<p class="goods-outline-origin">购于20200126天猫平台</p>
+							</div>
+						</a>
+
+						<button aria-label="Close" class="close btn-unlike" type="button">
+							<span aria-hidden="true">&times;</span>
+						</button>
+
+						<div align="center" class="rounded goods-outline-like">
+							<button class="btn btn-outline-success btn-find-similar">寻找相似</button>
+							<button class="btn btn-outline-danger btn-favorite">
+								<span>收藏</span>
+							</button>
+						</div>
+					</div>
+
+				</div>
+
+				<div class="goods-outline col">
+					<div class="goods-outline-content">
+						<a href="baidu.com">
+							<div class="goods-outline-info">
+								<img class="figure-img img-fluid rounded mx-auto d-block goods-outline-img"
+									 src="image/logo.jpg">
+								<p class="text-truncate text-wrap goods-outline-title"><span class="tag">精品</span>北欧洽谈接待阳台家用小户型客厅简约休闲休息圆桌奶茶餐桌椅组合
+									60黑单桌</p>
+								<h4 class="goods-outline-price">￥183.00</h4>
+								<p class="goods-outline-origin">购于20200126天猫平台</p>
+							</div>
+						</a>
+
+						<button aria-label="Close" class="close btn-unlike" type="button">
+							<span aria-hidden="true">&times;</span>
+						</button>
+
+						<div align="center" class="rounded goods-outline-like">
+							<button class="btn btn-outline-success btn-find-similar">寻找相似</button>
+							<button class="btn btn-outline-danger btn-favorite">
+								<span>收藏</span>
+							</button>
+						</div>
+					</div>
+
+				</div>
+
+				<div class="goods-outline col">
+					<div class="goods-outline-content">
+						<a href="baidu.com">
+							<div class="goods-outline-info">
+								<img class="figure-img img-fluid rounded mx-auto d-block goods-outline-img"
+									 src="image/logo.jpg">
+								<p class="text-truncate text-wrap goods-outline-title"><span class="tag">精品</span>北欧洽谈接待阳台家用小户型客厅简约休闲休息圆桌奶茶餐桌椅组合
+									60黑单桌</p>
+								<h4 class="goods-outline-price">￥183.00</h4>
+								<p class="goods-outline-origin">购于20200126天猫平台</p>
+							</div>
+						</a>
+
+						<button aria-label="Close" class="close btn-unlike" type="button">
+							<span aria-hidden="true">&times;</span>
+						</button>
+
+						<div align="center" class="rounded goods-outline-like">
+							<button class="btn btn-outline-success btn-find-similar">寻找相似</button>
+							<button class="btn btn-outline-danger btn-favorite">
+								<span>收藏</span>
+							</button>
+						</div>
+					</div>
+
+				</div>
+
+				<div class="goods-outline col">
+					<div class="goods-outline-content">
+						<a href="baidu.com">
+							<div class="goods-outline-info">
+								<img class="figure-img img-fluid rounded mx-auto d-block goods-outline-img"
+									 src="image/logo.jpg">
+								<p class="text-truncate text-wrap goods-outline-title"><span class="tag">精品</span>北欧洽谈接待阳台家用小户型客厅简约休闲休息圆桌奶茶餐桌椅组合
+									60黑单桌</p>
+								<h4 class="goods-outline-price">￥183.00</h4>
+								<p class="goods-outline-origin">购于20200126天猫平台</p>
+							</div>
+						</a>
+
+						<button aria-label="Close" class="close btn-unlike" type="button">
+							<span aria-hidden="true">&times;</span>
+						</button>
+
+						<div align="center" class="rounded goods-outline-like">
+							<button class="btn btn-outline-success btn-find-similar">寻找相似</button>
+							<button class="btn btn-outline-danger btn-favorite">
+								<span>收藏</span>
+							</button>
+						</div>
+					</div>
+
+				</div>
+
+				<div class="goods-outline col">
+					<div class="goods-outline-content">
+						<a href="baidu.com">
+							<div class="goods-outline-info">
+								<img class="figure-img img-fluid rounded mx-auto d-block goods-outline-img"
+									 src="image/logo.jpg">
+								<p class="text-truncate text-wrap goods-outline-title"><span class="tag">精品</span>北欧洽谈接待阳台家用小户型客厅简约休闲休息圆桌奶茶餐桌椅组合
+									60黑单桌</p>
+								<h4 class="goods-outline-price">￥183.00</h4>
+								<p class="goods-outline-origin">购于20200126天猫平台</p>
+							</div>
+						</a>
+
+						<button aria-label="Close" class="close btn-unlike" type="button">
+							<span aria-hidden="true">&times;</span>
+						</button>
+
+						<div align="center" class="rounded goods-outline-like">
+							<button class="btn btn-outline-success btn-find-similar">寻找相似</button>
+							<button class="btn btn-outline-danger btn-favorite">
+								<span>收藏</span>
+							</button>
+						</div>
+					</div>
+
+				</div>
+
+				<div class="goods-outline col">
+					<div class="goods-outline-content">
+						<a href="baidu.com">
+							<div class="goods-outline-info">
+								<img class="figure-img img-fluid rounded mx-auto d-block goods-outline-img"
+									 src="image/logo.jpg">
+								<p class="text-truncate text-wrap goods-outline-title"><span class="tag">精品</span>北欧洽谈接待阳台家用小户型客厅简约休闲休息圆桌奶茶餐桌椅组合
+									60黑单桌</p>
+								<h4 class="goods-outline-price">￥183.00</h4>
+								<p class="goods-outline-origin">购于20200126天猫平台</p>
+							</div>
+						</a>
+
+						<button aria-label="Close" class="close btn-unlike" type="button">
+							<span aria-hidden="true">&times;</span>
+						</button>
+
+						<div align="center" class="rounded goods-outline-like">
+							<button class="btn btn-outline-success btn-find-similar">寻找相似</button>
+							<button class="btn btn-outline-danger btn-favorite">
+								<span>收藏</span>
+							</button>
+						</div>
+					</div>
+
+				</div>
+
+				<div class="goods-outline col">
+					<div class="goods-outline-content">
+						<a href="baidu.com">
+							<div class="goods-outline-info">
+								<img class="figure-img img-fluid rounded mx-auto d-block goods-outline-img"
+									 src="image/logo.jpg">
+								<p class="text-truncate text-wrap goods-outline-title"><span class="tag">精品</span>北欧洽谈接待阳台家用小户型客厅简约休闲休息圆桌奶茶餐桌椅组合
+									60黑单桌</p>
+								<h4 class="goods-outline-price">￥183.00</h4>
+								<p class="goods-outline-origin">购于20200126天猫平台</p>
+							</div>
+						</a>
+
+						<button aria-label="Close" class="close btn-unlike" type="button">
+							<span aria-hidden="true">&times;</span>
+						</button>
+
+						<div align="center" class="rounded goods-outline-like">
+							<button class="btn btn-outline-success btn-find-similar">寻找相似</button>
+							<button class="btn btn-outline-danger btn-favorite">
+								<span>收藏</span>
+							</button>
+						</div>
+					</div>
+
+				</div>
+
+				<div class="goods-outline col">
+					<div class="goods-outline-content">
+						<a href="baidu.com">
+							<div class="goods-outline-info">
+								<img class="figure-img img-fluid rounded mx-auto d-block goods-outline-img"
+									 src="image/logo.jpg">
+								<p class="text-truncate text-wrap goods-outline-title"><span class="tag">精品</span>北欧洽谈接待阳台家用小户型客厅简约休闲休息圆桌奶茶餐桌椅组合
+									60黑单桌</p>
+								<h4 class="goods-outline-price">￥183.00</h4>
+								<p class="goods-outline-origin">购于20200126天猫平台</p>
+							</div>
+						</a>
+
+						<button aria-label="Close" class="close btn-unlike" type="button">
+							<span aria-hidden="true">&times;</span>
+						</button>
+
+						<div align="center" class="rounded goods-outline-like">
+							<button class="btn btn-outline-success btn-find-similar">寻找相似</button>
+							<button class="btn btn-outline-danger btn-favorite">
+								<span>收藏</span>
+							</button>
+						</div>
+					</div>
+
+				</div>
+
+				<div class="goods-outline col">
+					<div class="goods-outline-content">
+						<a href="baidu.com">
+							<div class="goods-outline-info">
+								<img class="figure-img img-fluid rounded mx-auto d-block goods-outline-img"
+									 src="image/logo.jpg">
+								<p class="text-truncate text-wrap goods-outline-title"><span class="tag">精品</span>北欧洽谈接待阳台家用小户型客厅简约休闲休息圆桌奶茶餐桌椅组合
+									60黑单桌</p>
+								<h4 class="goods-outline-price">￥183.00</h4>
+								<p class="goods-outline-origin">购于20200126天猫平台</p>
+							</div>
+						</a>
+
+						<button aria-label="Close" class="close btn-unlike" type="button">
+							<span aria-hidden="true">&times;</span>
+						</button>
+
+						<div align="center" class="rounded goods-outline-like">
+							<button class="btn btn-outline-success btn-find-similar">寻找相似</button>
+							<button class="btn btn-outline-danger btn-favorite">
+								<span>收藏</span>
+							</button>
+						</div>
+					</div>
+
+				</div>
+
+				<div class="goods-outline col">
+					<div class="goods-outline-content">
+						<a href="baidu.com">
+							<div class="goods-outline-info">
+								<img class="figure-img img-fluid rounded mx-auto d-block goods-outline-img"
+									 src="image/logo.jpg">
+								<p class="text-truncate text-wrap goods-outline-title"><span class="tag">精品</span>北欧洽谈接待阳台家用小户型客厅简约休闲休息圆桌奶茶餐桌椅组合
+									60黑单桌</p>
+								<h4 class="goods-outline-price">￥183.00</h4>
+								<p class="goods-outline-origin">购于20200126天猫平台</p>
+							</div>
+						</a>
+
+						<button aria-label="Close" class="close btn-unlike" type="button">
+							<span aria-hidden="true">&times;</span>
+						</button>
+
+						<div align="center" class="rounded goods-outline-like">
+							<button class="btn btn-outline-success btn-find-similar">寻找相似</button>
+							<button class="btn btn-outline-danger btn-favorite">
+								<span>收藏</span>
+							</button>
+						</div>
+					</div>
+
+				</div>
+
+				<div class="goods-outline col">
+					<div class="goods-outline-content">
+						<a href="baidu.com">
+							<div class="goods-outline-info">
+								<img class="figure-img img-fluid rounded mx-auto d-block goods-outline-img"
+									 src="image/logo.jpg">
+								<p class="text-truncate text-wrap goods-outline-title"><span class="tag">精品</span>北欧洽谈接待阳台家用小户型客厅简约休闲休息圆桌奶茶餐桌椅组合
+									60黑单桌</p>
+								<h4 class="goods-outline-price">￥183.00</h4>
+								<p class="goods-outline-origin">购于20200126天猫平台</p>
+							</div>
+						</a>
+
+						<button aria-label="Close" class="close btn-unlike" type="button">
+							<span aria-hidden="true">&times;</span>
+						</button>
+
+						<div align="center" class="rounded goods-outline-like">
+							<button class="btn btn-outline-success btn-find-similar">寻找相似</button>
+							<button class="btn btn-outline-danger btn-favorite">
+								<span>收藏</span>
+							</button>
+						</div>
+					</div>
+
+				</div>
+
+				<div class="goods-outline col">
+					<div class="goods-outline-content">
+						<a href="baidu.com">
+							<div class="goods-outline-info">
+								<img class="figure-img img-fluid rounded mx-auto d-block goods-outline-img"
+									 src="image/logo.jpg">
+								<p class="text-truncate text-wrap goods-outline-title"><span class="tag">精品</span>北欧洽谈接待阳台家用小户型客厅简约休闲休息圆桌奶茶餐桌椅组合
+									60黑单桌</p>
+								<h4 class="goods-outline-price">￥183.00</h4>
+								<p class="goods-outline-origin">购于20200126天猫平台</p>
+							</div>
+						</a>
+
+						<button aria-label="Close" class="close btn-unlike" type="button">
+							<span aria-hidden="true">&times;</span>
+						</button>
+
+						<div align="center" class="rounded goods-outline-like">
+							<button class="btn btn-outline-success btn-find-similar">寻找相似</button>
+							<button class="btn btn-outline-danger btn-favorite">
+								<span>收藏</span>
+							</button>
+						</div>
+					</div>
+
+				</div>
+
+				<div class="goods-outline col">
+					<div class="goods-outline-content">
+						<a href="baidu.com">
+							<div class="goods-outline-info">
+								<img class="figure-img img-fluid rounded mx-auto d-block goods-outline-img"
+									 src="image/logo.jpg">
+								<p class="text-truncate text-wrap goods-outline-title"><span class="tag">精品</span>北欧洽谈接待阳台家用小户型客厅简约休闲休息圆桌奶茶餐桌椅组合
+									60黑单桌</p>
+								<h4 class="goods-outline-price">￥183.00</h4>
+								<p class="goods-outline-origin">购于20200126天猫平台</p>
+							</div>
+						</a>
+
+						<button aria-label="Close" class="close btn-unlike" type="button">
+							<span aria-hidden="true">&times;</span>
+						</button>
+
+						<div align="center" class="rounded goods-outline-like">
+							<button class="btn btn-outline-success btn-find-similar">寻找相似</button>
+							<button class="btn btn-outline-danger btn-favorite">
+								<span>收藏</span>
+							</button>
+						</div>
+					</div>
+
+				</div>
+
+				<div class="goods-outline col">
+					<div class="goods-outline-content">
+						<a href="baidu.com">
+							<div class="goods-outline-info">
+								<img class="figure-img img-fluid rounded mx-auto d-block goods-outline-img"
+									 src="image/logo.jpg">
+								<p class="text-truncate text-wrap goods-outline-title"><span class="tag">精品</span>北欧洽谈接待阳台家用小户型客厅简约休闲休息圆桌奶茶餐桌椅组合
+									60黑单桌</p>
+								<h4 class="goods-outline-price">￥183.00</h4>
+								<p class="goods-outline-origin">购于20200126天猫平台</p>
+							</div>
+						</a>
+
+						<button aria-label="Close" class="close btn-unlike" type="button">
+							<span aria-hidden="true">&times;</span>
+						</button>
+
+						<div align="center" class="rounded goods-outline-like">
+							<button class="btn btn-outline-success btn-find-similar">寻找相似</button>
+							<button class="btn btn-outline-danger btn-favorite">
+								<span>收藏</span>
+							</button>
+						</div>
+					</div>
+
+				</div>
+
+				<div class="goods-outline col">
+					<div class="goods-outline-content">
+						<a href="baidu.com">
+							<div class="goods-outline-info">
+								<img class="figure-img img-fluid rounded mx-auto d-block goods-outline-img"
+									 src="image/logo.jpg">
+								<p class="text-truncate text-wrap goods-outline-title"><span class="tag">精品</span>北欧洽谈接待阳台家用小户型客厅简约休闲休息圆桌奶茶餐桌椅组合
+									60黑单桌</p>
+								<h4 class="goods-outline-price">￥183.00</h4>
+								<p class="goods-outline-origin">购于20200126天猫平台</p>
+							</div>
+						</a>
+
+						<button aria-label="Close" class="close btn-unlike" type="button">
+							<span aria-hidden="true">&times;</span>
+						</button>
+
+						<div align="center" class="rounded goods-outline-like">
+							<button class="btn btn-outline-success btn-find-similar">寻找相似</button>
+							<button class="btn btn-outline-danger btn-favorite">
+								<span>收藏</span>
+							</button>
+						</div>
+					</div>
+
+				</div>
+
+
+			</div>
+
+		</div>
+
+    </div>
+
+    <div align="center" class="offset-2" style="margin-top: 80px">
+        <ul class="pagination">
+            <li class="page-item">
+                <a aria-label="Previous" class="page-link" href="#">
+                    <span aria-hidden="true">&laquo;</span>
+                    <span class="sr-only">Previous</span>
+                </a>
+            </li>
+            <li class="page-item"><a class="page-link" href="#">1</a></li>
+            <li class="page-item"><a class="page-link" href="#">2</a></li>
+            <li class="page-item"><a class="page-link" href="#">3</a></li>
+            <li class="page-item">
+                <a aria-label="Next" class="page-link" href="#">
+                    <span aria-hidden="true">&raquo;</span>
+                    <span class="sr-only">Next</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+</main>
+
+
+<footer style="background: #d3d9df;width: 100%;margin: 60px 0 0 0;padding-top: 20px;padding-bottom: 50px">
+    <div>
+        <div class="container-fluid row promise-block justify-content-around" style="width: 100%">
+            <div class="col-2">
+                <img class="img-thumbnail" src="image/promise/promise1.jpg" style="width: 35%;display: inline-block">
+                <div style="width: 68%;display: inline-block;padding-left: 10px;position: absolute;top: 0;bottom: 0">
+                    <span style="font-size: 22px">正品保障</span><br>
+                    <span style="font-size: 12px">正品保障、提供发票</span>
+                </div>
+            </div>
+
+            <div class="col-2">
+                <img class="img-thumbnail" src="image/promise/promise2.jpg" style="width: 35%;display: inline-block">
+                <div style="width: 68%;display: inline-block;padding-left: 10px;position: absolute;top: 0;bottom: 0">
+                    <span style="font-size: 22px">急速物流</span><br>
+                    <span style="font-size: 14px">如约送货、送货入户</span>
+                </div>
+            </div>
+
+            <div class="col-2">
+                <img class="img-thumbnail" src="image/promise/promise3.jpg" style="width: 35%;display: inline-block">
+                <div style="width: 68%;display: inline-block;padding-left: 10px;position: absolute;top: 0;bottom: 0">
+                    <span style="font-size: 22px">售后无忧</span><br>
+                    <span style="font-size: 14px">14天包退30天包换</span>
+                </div>
+            </div>
+
+            <div class="col-2">
+                <img class="img-thumbnail" src="image/promise/promise4.jpg" style="width: 35%;display: inline-block">
+                <div style="width: 68%;display: inline-block;padding-left: 10px;position: absolute;top: 0;bottom: 0">
+                    <span style="font-size: 22px">帮助中心</span><br>
+                    <span style="font-size: 14px">您的购物指南</span>
+                </div>
+            </div>
+
+            <div class="col-2">
+                <img class="img-thumbnail" src="image/promise/promise5.png" style="width: 35%;display: inline-block">
+                <div style="width: 68%;display: inline-block;padding-left: 10px;position: absolute;top: 0;bottom: 0">
+                    <span style="font-size: 22px">省心购</span><br>
+                    <span style="font-size: 14px">专注好服务</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="ng-s-f-con" style="text-align: center;margin-top: 30px">
+            <p class="ng-copyright" style="display: block;">
+                Copyright© 2002-2020，3305集团股份有限公司版权所有<span>|</span>
+                <a class="gwab" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=32010202010078"
+                   rel="nofollow" style="color:#999" target="_blank"><i></i>豫公网安备 32010202010078号</a><span>|</span>
+                <a href="http://www.beian.miit.gov.cn" style="color:#999" target="_blank">豫ICP备10207551号-4</a></p>
+            <p class="ng-copyright ng-copyright-2" style="display: block;">
+                <a href="//res.suning.cn/public/v3/images/dx5006.png" rel="nofollow" style="color:#999" target="_blank">合字B2-20180025</a><span>|</span>
+                <a href="//res.suning.cn/public/v3/images/dx1001.png" rel="nofollow" style="color:#999" target="_blank">合字A1.B1.B2-20180017</a><span>|</span>
+                <a href="//res.suning.cn/public/v3/images/cbw-20200402.jpg" rel="nofollow" style="color:#999"
+                   target="_blank">出版物经营许可证新出发豫批字第A-243号</a><span>|</span>
+                互联网药品信息服务资格证书<a href="//res.suning.cn/public/v3/images/yaopin_new.png" rel="nofollow" style="color:#999"
+                                target="_blank">（豫）-非经营性-2016-0005</a></p>
+            <p class="ng-copyright ng-copyright-3" style="display: block;">
+                <a href="https://cuxiao.suning.com/jyzz2.html" rel="nofollow" style="color:#999"
+                   target="_blank">经营证照</a><span>|</span>
+                <a href="http://sq.ccm.gov.cn/ccnt/sczr/service/business/emark/toDetail/ccaf7746824a4f91af567c29abc4b6aa"
+                   rel="nofollow" style="color:#999" target="_blank">网络文化经营许可证：豫网文〔2018〕10580-203号</a><span>|</span>
+                <a href="javascript:;" style="cursor: default;">互联网违法和不良信息举报邮箱：kfpt-yy@cnsuning.com</a><span>|</span>
+                <a href="javascript:;" style="cursor: default;">举报电话：02566996699-865948</a>
+            </p>
+            <p class="ng-copyright" style="display: block;"><a
+                    href="//res.suning.cn/public/v3/images/ylqx-20190103.jpg?v=20200827" rel="nofollow" style="color:#999"
+                    target="_blank">医疗器械网络交易服务第三方平台备案凭证-（豫）网械平台备字（2018）第00052号</a></p>
+            <p class="ng-copyright" style="display: block;">本网站直接或间接向消费者推销商品或者服务的商业宣传均属于“广告”（包装及参数、售后保障等商品信息除外）</p>
+            <div class="ng-authentication" style="display: block;">
+                <a href="http://www.itrust.org.cn/Home/Index/itrust_certifi/wm/1566884810.html" name="public0_none_wb_zs0301"
+                   rel="nofollow" sap-expo="true" target="_blank">
+                    <img alt="网信认证" height="24" src="//res.suning.cn/public/v3/images/wxrz.png" width="65">
+                </a>
+                <a href="https://search.szfw.org/cert/l/CX20111018000608000610" name="public0_none_wb_zs0302"
+                   rel="nofollow" sap-expo="true" target="_blank">
+                    <img alt="诚信网站" height="24" src="//res.suning.cn/public/v3/images/chengxin.png" width="76">
+                </a>
+                <a href="http://image.suning.cn/uimg/snnet/snnetImg/142891196680527240.jpg" name="public0_none_wb_zs0303"
+                   rel="nofollow" sap-expo="true" target="_blank">
+                    <img alt="中国联通授权网络经营代理商" height="24" src="//res.suning.cn/public/v3/images/unicom.png" width="76">
+                </a>
+                <a href="//res.suning.cn/public/v3/images/dianxin_content.jpg" name="public0_none_wb_zs0304"
+                   rel="nofollow" sap-expo="true" target="_blank">
+                    <img alt="中国电信授权网络经营代理商" height="24" src="//res.suning.cn/public/v3/images/dianxin.jpg" width="76">
+                </a>
+                <a href="https://zzlz.gsxt.gov.cn/businessCheck/verifKey.do?showType=p&amp;serial=913200005668848108-SAIC_SHOW_1000009132000056688481081572311357911&amp;signData=MEQCII+7OGallh6hxToamA3VfhexsTQw4fBcArcI7NexQaS0AiA8CqvkBVtdxtB/yiHMrNo9FWipRU161IH5hhB5BlBi2g=="
+                   name="public0_none_wb_zs0305" rel="nofollow" sap-expo="true" target="_blank">
+                    <img alt="电子营业执照" height="24" src="//res.suning.cn/public/v3/images/dianzizhizhao.png?v=01"
+                         width="24">
+                </a>
+                <a href="//www.12377.cn/node_548446.htm" name="public0_none_wb_zs0306" rel="nofollow" sap-expo="true"
+                   target="_blank">
+                    <img alt="12377" height="24" src="//res.suning.cn/public/v3/images/netsafe1.png?v=01" width="72">
+                </a>
+                <a href="//www.12377.cn/" name="public0_none_wb_zs0307" rel="nofollow" sap-expo="true" target="_blank">
+                    <img alt="网上有害信息举报" height="24" src="//res.suning.cn/public/v3/images/netsafe2.png?v=01"
+                         width="144">
+                </a>
+                <a href="http://www.shdf.gov.cn/shdf/channels/740.html" name="public0_none_wb_zs0308" rel="nofollow"
+                   sap-expo="true" target="_blank">
+                    <img alt="扫黄打非" height="24" src="//res.suning.cn/public/v3/images/netsafe3.png?v=01" width="166">
+                </a>
+            </div>
+        </div>
+    </div>
+</footer>
+<script src="link/jquery-3.5.1.js"></script>
+<script src="link/bootstrap-4.5.0-dist/js/bootstrap.bundle.js"></script>
+<script src="js/common.js"></script>
+</body>
+</html>
